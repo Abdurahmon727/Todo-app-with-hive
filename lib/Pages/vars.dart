@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:hive/hive.dart';
 
-List<String?> Tasks = ['Do homework', 'clear your room', 'help your mother'];
-List<bool?> isChecked = [true, false, false];
+var localFile = Hive.box('todoList');
+List<dynamic> tasks = [];
+List<dynamic> isChecked = [];
+
 List<TextDecoration> isCrossed = [
   TextDecoration.lineThrough,
   TextDecoration.none,
